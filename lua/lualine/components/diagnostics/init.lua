@@ -102,6 +102,8 @@ function M:update_status()
     for _, section in ipairs(self.options.sections) do
       if diagnostics_count[section] ~= nil and (always_visible or diagnostics_count[section] > 0) then
         table.insert(result, self.symbols[section] .. diagnostics_count[section])
+    else
+        table.insert(result, '')
       end
     end
   end
